@@ -1,0 +1,38 @@
+Note:
+  type: entity
+  table: note
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    date:
+      type: date
+      nullable: false
+    valeur:
+      type: integer
+      unsigned: false
+      nullable: false
+  oneToOne:
+    idDevoir:
+      targetEntity: Devoir
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        id_devoir:
+          referencedColumnName: id
+      orphanRemoval: false
+    idUtilisateur:
+      targetEntity: Utilisateur
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        id_utilisateur:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

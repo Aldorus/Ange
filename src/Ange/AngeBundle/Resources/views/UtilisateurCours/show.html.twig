@@ -1,0 +1,41 @@
+<h1>UtilisateurCours</h1>
+
+<table class="record_properties">
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+            <th>Present</th>
+            <td>{{ entity.present }}</td>
+        </tr>
+        <tr>
+            <th>Prof</th>
+            <td>{{ entity.prof }}</td>
+        </tr>
+        <tr>
+            <th>Retard</th>
+            <td>{{ entity.retard }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('utilisateurcours') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('utilisateurcours_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('utilisateurcours_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+</ul>

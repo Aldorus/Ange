@@ -1,0 +1,35 @@
+Promotion:
+  type: entity
+  table: promotion
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    label:
+      type: string
+      length: 100
+      fixed: false
+      nullable: false
+    idFonctionnel:
+      type: string
+      length: 45
+      fixed: false
+      nullable: true
+      column: id_fonctionnel
+    annee:
+      type: integer
+      unsigned: false
+      nullable: false
+  manyToMany:
+    idUtilisateur:
+      targetEntity: Utilisateur
+      cascade: {  }
+      mappedBy: idPromotion
+      inversedBy: null
+      joinTable: null
+      orderBy: null
+  lifecycleCallbacks: {  }

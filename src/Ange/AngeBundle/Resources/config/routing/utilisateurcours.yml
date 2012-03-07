@@ -1,0 +1,30 @@
+utilisateurcours:
+    pattern:  /
+    defaults: { _controller: "AngeAngeBundle:UtilisateurCours:index" }
+
+utilisateurcours_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "AngeAngeBundle:UtilisateurCours:show" }
+
+utilisateurcours_new:
+    pattern:  /new
+    defaults: { _controller: "AngeAngeBundle:UtilisateurCours:new" }
+
+utilisateurcours_create:
+    pattern:  /create
+    defaults: { _controller: "AngeAngeBundle:UtilisateurCours:create" }
+    requirements: { _method: post }
+
+utilisateurcours_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "AngeAngeBundle:UtilisateurCours:edit" }
+
+utilisateurcours_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "AngeAngeBundle:UtilisateurCours:update" }
+    requirements: { _method: post }
+
+utilisateurcours_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "AngeAngeBundle:UtilisateurCours:delete" }
+    requirements: { _method: post }

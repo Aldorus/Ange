@@ -1,0 +1,30 @@
+groupedevoir:
+    pattern:  /
+    defaults: { _controller: "AngeAngeBundle:Groupedevoir:index" }
+
+groupedevoir_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "AngeAngeBundle:Groupedevoir:show" }
+
+groupedevoir_new:
+    pattern:  /new
+    defaults: { _controller: "AngeAngeBundle:Groupedevoir:new" }
+
+groupedevoir_create:
+    pattern:  /create
+    defaults: { _controller: "AngeAngeBundle:Groupedevoir:create" }
+    requirements: { _method: post }
+
+groupedevoir_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "AngeAngeBundle:Groupedevoir:edit" }
+
+groupedevoir_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "AngeAngeBundle:Groupedevoir:update" }
+    requirements: { _method: post }
+
+groupedevoir_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "AngeAngeBundle:Groupedevoir:delete" }
+    requirements: { _method: post }

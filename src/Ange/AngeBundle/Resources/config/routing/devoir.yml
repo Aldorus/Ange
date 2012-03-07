@@ -1,0 +1,30 @@
+devoir:
+    pattern:  /
+    defaults: { _controller: "AngeAngeBundle:Devoir:index" }
+
+devoir_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "AngeAngeBundle:Devoir:show" }
+
+devoir_new:
+    pattern:  /new
+    defaults: { _controller: "AngeAngeBundle:Devoir:new" }
+
+devoir_create:
+    pattern:  /create
+    defaults: { _controller: "AngeAngeBundle:Devoir:create" }
+    requirements: { _method: post }
+
+devoir_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "AngeAngeBundle:Devoir:edit" }
+
+devoir_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "AngeAngeBundle:Devoir:update" }
+    requirements: { _method: post }
+
+devoir_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "AngeAngeBundle:Devoir:delete" }
+    requirements: { _method: post }

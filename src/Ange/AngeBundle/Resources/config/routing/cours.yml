@@ -1,0 +1,30 @@
+cours:
+    pattern:  /
+    defaults: { _controller: "AngeAngeBundle:Cours:index" }
+
+cours_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "AngeAngeBundle:Cours:show" }
+
+cours_new:
+    pattern:  /new
+    defaults: { _controller: "AngeAngeBundle:Cours:new" }
+
+cours_create:
+    pattern:  /create
+    defaults: { _controller: "AngeAngeBundle:Cours:create" }
+    requirements: { _method: post }
+
+cours_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "AngeAngeBundle:Cours:edit" }
+
+cours_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "AngeAngeBundle:Cours:update" }
+    requirements: { _method: post }
+
+cours_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "AngeAngeBundle:Cours:delete" }
+    requirements: { _method: post }

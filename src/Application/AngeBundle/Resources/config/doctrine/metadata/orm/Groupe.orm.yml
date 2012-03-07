@@ -1,0 +1,27 @@
+Groupe:
+  type: entity
+  table: groupe
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    label:
+      type: string
+      length: 100
+      fixed: false
+      nullable: false
+  oneToOne:
+    idPromotion:
+      targetEntity: Promotion
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        id_promotion:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

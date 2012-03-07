@@ -1,0 +1,30 @@
+promotion:
+    pattern:  /
+    defaults: { _controller: "AngeAngeBundle:Promotion:index" }
+
+promotion_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "AngeAngeBundle:Promotion:show" }
+
+promotion_new:
+    pattern:  /new
+    defaults: { _controller: "AngeAngeBundle:Promotion:new" }
+
+promotion_create:
+    pattern:  /create
+    defaults: { _controller: "AngeAngeBundle:Promotion:create" }
+    requirements: { _method: post }
+
+promotion_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "AngeAngeBundle:Promotion:edit" }
+
+promotion_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "AngeAngeBundle:Promotion:update" }
+    requirements: { _method: post }
+
+promotion_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "AngeAngeBundle:Promotion:delete" }
+    requirements: { _method: post }

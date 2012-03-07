@@ -1,0 +1,40 @@
+UtilisateurCours:
+  type: entity
+  table: utilisateur_cours
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    present:
+      type: boolean
+      nullable: true
+    prof:
+      type: boolean
+      nullable: false
+    retard:
+      type: boolean
+      nullable: true
+  oneToOne:
+    idCours:
+      targetEntity: Cours
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        id_cours:
+          referencedColumnName: id
+      orphanRemoval: false
+    idUtilisateur:
+      targetEntity: Utilisateur
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        id_utilisateur:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

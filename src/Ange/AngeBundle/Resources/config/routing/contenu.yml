@@ -1,0 +1,30 @@
+contenu:
+    pattern:  /
+    defaults: { _controller: "AngeAngeBundle:Contenu:index" }
+
+contenu_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "AngeAngeBundle:Contenu:show" }
+
+contenu_new:
+    pattern:  /new
+    defaults: { _controller: "AngeAngeBundle:Contenu:new" }
+
+contenu_create:
+    pattern:  /create
+    defaults: { _controller: "AngeAngeBundle:Contenu:create" }
+    requirements: { _method: post }
+
+contenu_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "AngeAngeBundle:Contenu:edit" }
+
+contenu_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "AngeAngeBundle:Contenu:update" }
+    requirements: { _method: post }
+
+contenu_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "AngeAngeBundle:Contenu:delete" }
+    requirements: { _method: post }

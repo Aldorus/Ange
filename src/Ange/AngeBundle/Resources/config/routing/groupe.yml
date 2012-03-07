@@ -1,0 +1,30 @@
+groupe:
+    pattern:  /
+    defaults: { _controller: "AngeAngeBundle:Groupe:index" }
+
+groupe_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "AngeAngeBundle:Groupe:show" }
+
+groupe_new:
+    pattern:  /new
+    defaults: { _controller: "AngeAngeBundle:Groupe:new" }
+
+groupe_create:
+    pattern:  /create
+    defaults: { _controller: "AngeAngeBundle:Groupe:create" }
+    requirements: { _method: post }
+
+groupe_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "AngeAngeBundle:Groupe:edit" }
+
+groupe_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "AngeAngeBundle:Groupe:update" }
+    requirements: { _method: post }
+
+groupe_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "AngeAngeBundle:Groupe:delete" }
+    requirements: { _method: post }

@@ -1,0 +1,44 @@
+Groupedevoir:
+  type: entity
+  table: groupedevoir
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    label:
+      type: string
+      length: 45
+      fixed: false
+      nullable: false
+  manyToMany:
+    idUtilisateur:
+      targetEntity: Utilisateur
+      cascade: {  }
+      mappedBy: null
+      inversedBy: idGroupeDevoir
+      joinTable:
+        name: asso_utilisateur_groupedevoir
+        joinColumns:
+          -
+            name: id_groupe_devoir
+            referencedColumnName: id
+        inverseJoinColumns:
+          -
+            name: id_utilisateur
+            referencedColumnName: id
+      orderBy: null
+  oneToOne:
+    idDevoir:
+      targetEntity: Devoir
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        id_devoir:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

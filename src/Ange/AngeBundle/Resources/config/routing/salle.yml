@@ -1,0 +1,30 @@
+salle:
+    pattern:  /
+    defaults: { _controller: "AngeAngeBundle:Salle:index" }
+
+salle_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "AngeAngeBundle:Salle:show" }
+
+salle_new:
+    pattern:  /new
+    defaults: { _controller: "AngeAngeBundle:Salle:new" }
+
+salle_create:
+    pattern:  /create
+    defaults: { _controller: "AngeAngeBundle:Salle:create" }
+    requirements: { _method: post }
+
+salle_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "AngeAngeBundle:Salle:edit" }
+
+salle_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "AngeAngeBundle:Salle:update" }
+    requirements: { _method: post }
+
+salle_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "AngeAngeBundle:Salle:delete" }
+    requirements: { _method: post }

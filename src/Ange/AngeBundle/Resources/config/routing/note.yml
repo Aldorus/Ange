@@ -1,0 +1,31 @@
+note:
+    pattern:  /
+    defaults: { _controller: "AngeAngeBundle:Note:index" }
+
+note_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "AngeAngeBundle:Note:show" }
+
+note_new:
+    pattern:  /new
+    defaults: { _controller: "AngeAngeBundle:Note:new" }
+
+note_create:
+    pattern:  /create
+    defaults: { _controller: "AngeAngeBundle:Note:create" }
+    requirements: { _method: post }
+
+note_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "AngeAngeBundle:Note:edit" }
+
+note_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "AngeAngeBundle:Note:update" }
+    requirements: { _method: post }
+
+note_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "AngeAngeBundle:Note:delete" }
+    requirements: { _method: post }
+

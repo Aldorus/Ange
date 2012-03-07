@@ -1,0 +1,36 @@
+Cours:
+  type: entity
+  table: cours
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    label:
+      type: string
+      length: 100
+      fixed: false
+      nullable: false
+  oneToOne:
+    idMatiere:
+      targetEntity: Matiere
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        id_matiere:
+          referencedColumnName: id
+      orphanRemoval: false
+    idSalle:
+      targetEntity: Salle
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        id_salle:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

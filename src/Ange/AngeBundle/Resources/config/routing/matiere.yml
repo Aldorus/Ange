@@ -1,0 +1,30 @@
+matiere:
+    pattern:  /
+    defaults: { _controller: "AngeAngeBundle:Matiere:index" }
+
+matiere_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "AngeAngeBundle:Matiere:show" }
+
+matiere_new:
+    pattern:  /new
+    defaults: { _controller: "AngeAngeBundle:Matiere:new" }
+
+matiere_create:
+    pattern:  /create
+    defaults: { _controller: "AngeAngeBundle:Matiere:create" }
+    requirements: { _method: post }
+
+matiere_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "AngeAngeBundle:Matiere:edit" }
+
+matiere_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "AngeAngeBundle:Matiere:update" }
+    requirements: { _method: post }
+
+matiere_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "AngeAngeBundle:Matiere:delete" }
+    requirements: { _method: post }

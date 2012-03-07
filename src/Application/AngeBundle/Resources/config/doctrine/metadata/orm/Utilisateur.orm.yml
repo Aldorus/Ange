@@ -1,0 +1,160 @@
+Utilisateur:
+  type: entity
+  table: utilisateur
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    nom:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    prenom:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    login:
+      type: string
+      length: 100
+      fixed: false
+      nullable: false
+    password:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+    adresse:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    cp:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+    ville:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    telephone:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+    mail:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    dateInscription:
+      type: date
+      nullable: false
+      column: date_inscription
+    username:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+    usernameCanonical:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+      column: username_canonical
+    email:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+    emailCanonical:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+      column: email_canonical
+    enabled:
+      type: boolean
+      nullable: false
+    salt:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+    lastLogin:
+      type: datetime
+      nullable: true
+      column: last_login
+    locked:
+      type: boolean
+      nullable: false
+    expired:
+      type: boolean
+      nullable: false
+    expiresAt:
+      type: datetime
+      nullable: true
+      column: expires_at
+    confirmationToken:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+      column: confirmation_token
+    passwordRequestedAt:
+      type: datetime
+      nullable: true
+      column: password_requested_at
+    roles:
+      type: array
+      nullable: false
+    credentialsExpired:
+      type: boolean
+      nullable: false
+      column: credentials_expired
+    credentialsExpireAt:
+      type: datetime
+      nullable: true
+      column: credentials_expire_at
+  manyToMany:
+    idGroupeDevoir:
+      targetEntity: Groupedevoir
+      cascade: {  }
+      mappedBy: idUtilisateur
+      inversedBy: null
+      joinTable: null
+      orderBy: null
+    idPromotion:
+      targetEntity: Promotion
+      cascade: {  }
+      mappedBy: null
+      inversedBy: idUtilisateur
+      joinTable:
+        name: asso_utilisateur_promotion
+        joinColumns:
+          -
+            name: id_utilisateur
+            referencedColumnName: id
+        inverseJoinColumns:
+          -
+            name: id_promotion
+            referencedColumnName: id
+      orderBy: null
+  oneToOne:
+    idGroupe:
+      targetEntity: Groupe
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        id_groupe:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

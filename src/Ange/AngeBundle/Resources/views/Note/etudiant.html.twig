@@ -1,0 +1,8 @@
+<div class="breadcrumb">
+	<a href="{{ path('AngeAngeBundle_home') }}">Accueil</a> -> Note
+</div>
+
+<h1>Liste des notes</h1>
+{% for entity in entities %}
+	Votre note : {{entity[0].getValeur()}}, la moyenne de la classe : {{entity[1]}}, pour la matière : {{entity[0].idDevoir.idMatiere}}<br/>
+{% endfor %}

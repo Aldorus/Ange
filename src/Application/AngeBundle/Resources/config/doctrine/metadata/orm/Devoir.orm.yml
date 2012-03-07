@@ -1,0 +1,33 @@
+Devoir:
+  type: entity
+  table: devoir
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    date:
+      type: datetime
+      nullable: false
+    label:
+      type: string
+      length: 100
+      fixed: false
+      nullable: false
+    descritpion:
+      type: text
+      nullable: true
+  oneToOne:
+    idMatiere:
+      targetEntity: Matiere
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        id_matiere:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }
