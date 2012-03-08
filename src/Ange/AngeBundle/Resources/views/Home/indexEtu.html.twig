@@ -2,13 +2,18 @@
 {% block title %}{{ parent() }} - Home{% endblock %}
 
 {% block body %}
+	<div class="floatRight">
+		<h2>Info (right)</h2>
+		Compteur de vos absences : {{ nbAbsence }}<br/><hr/><br/>
+		Absences de vos professeurs : <br/>
+			{% for absenceProf in absencesProf%}
+				 Prof : {{ absenceProf.idUtilisateur.username }}, pour le cours : {{ absenceProf.idCours.label }}
+			{% endfor %}
+	</div>
+	
+	<div class="breadcrumb">
+		Accueil
+	</div>
+	
 	Cours de la semaine (planning)
-	
-	<h2>Info (right)</h2>
-	Compteur de vos absences : {{ nbAbsence }}<br/><hr/><br/>
-	Absences de vos professeurs : <br/>
-		{% for absenceProf in absencesProf%}
-			 Prof : {{ absenceProf.idUtilisateur.username }}, pour le cours : {{ absenceProf.idCours.label }}
-		{% endfor %}
-	
 {% endblock %}
