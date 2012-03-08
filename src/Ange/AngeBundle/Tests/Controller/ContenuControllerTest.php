@@ -51,4 +51,6 @@ class ContenuControllerTest extends WebTestCase
         $this->assertNotRegExp('/Foo/', $client->getResponse()->getContent());
     }
     */
+	
+	//blop
 }
