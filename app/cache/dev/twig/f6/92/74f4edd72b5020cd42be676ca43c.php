@@ -34,9 +34,14 @@ class __TwigTemplate_f69274f4edd72b5020cd42be676ca43c extends Twig_Template
     public function block_body($context, array $blocks = array())
     {
         // line 5
-        echo "\tCours de la semaine (planning)
+        echo "\t<div class=\"floatRight\">
+\t\t<h2>Info (right)</h2>
+\t\t
+\t</div>
 \t
-\t<h2>Info (right)</h2>
+\tCours de la semaine (planning)
+\t
+\t
 ";
     }
 

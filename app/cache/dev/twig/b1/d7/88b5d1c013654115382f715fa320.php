@@ -27,7 +27,14 @@ class __TwigTemplate_b1d788b5d1c013654115382f715fa320 extends Twig_Template
         <link rel=\"stylesheet\" media=\"screen\" href=\"style/style.css\">
     </head>
     <body>
-
+\t\t<a href=\"";
+        // line 9
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("profil"), "html", null, true);
+        echo "\">Mon profil</a><a href=\"";
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("contact"), "html", null, true);
+        echo "\">Contact</a> <a href=\"";
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("fos_user_security_logout"), "html", null, true);
+        echo "\">D&eacute;connexion</a>
         ";
         // line 10
         $this->displayBlock('body', $context, $blocks);
@@ -55,4 +62,8 @@ class __TwigTemplate_b1d788b5d1c013654115382f715fa320 extends Twig_Template
         return "AngeAngeBundle::layoutProf.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
 }
