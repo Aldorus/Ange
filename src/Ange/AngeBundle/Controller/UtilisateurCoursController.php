@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Ange\AngeBundle\Entity\UtilisateurCours;
 use Ange\AngeBundle\Form\UtilisateurCoursType;
+use Ange\AngeBundle\Manager\UtilisateurCoursManager;
 
 /**
  * UtilisateurCours controller.
@@ -183,5 +184,16 @@ class UtilisateurCoursController extends Controller
             ->add('id', 'hidden')
             ->getForm()
         ;
+    }
+    
+    
+    public function feuilleDePresenceAction($id){
+    	//on recupere l'id du cours
+    	$coursUserManager = new UtilisateurCoursManager($this);
+        $listeUtilisateur = $coursUserManager->getUtilisateurByCours($id);
+    	return $this->render('AngeAngeBundle:UtilisateurCours:feuille_presence.html.twig',array(
+    		'utilisateurs'		=>	$listeUtilisateur,
+    		'coursDefault'	=> -1,
+    	));
     }
 }

@@ -1,0 +1,9 @@
+{% extends "AngeAngeBundle::layoutProf.html.twig" %}
+{% block title %}{{ parent() }} - Feuille de pr&eacute;sence{% endblock %}
+
+{% block body %}
+	Etudiants : 
+	{% for utilisateur in utilisateurs %}
+		{{ utilisateur.id }}
+	{% endfor %}
+{% endblock %}

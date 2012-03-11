@@ -56,12 +56,15 @@ class HomeController extends Controller
     }
     
   	public function indexProfAction(){
-  		$em = $this->getDoctrine()->getEntityManager();
-
-        $entities = $em->getRepository('AngeAngeBundle:Cours')->findAll();
-
+  		$user= $this->container->get('security.context')->getToken()->getUser();
+  		$coursUserManager = new UtilisateurCoursManager($this);
+		$courActuel = $coursUserManager->courActuel($user);
+		$courSuivant = $coursUserManager->courSuivant($user);
+  		
         return $this->render('AngeAngeBundle:Home:indexProf.html.twig', array(
-            'entities' => $entities
+            'courActuel' 	=> $courActuel,
+        	'courSuivant'	=> $courSuivant,
+        	'coursDefault'	=> -1,
         ));
   	}
   	

@@ -4,7 +4,13 @@
 {% block body %}
 	<div class="floatRight">
 		<h2>Info (right)</h2>
-		
+		{% if courActuel is not null %}
+			Cours actuel : {{courActuel.id}} 
+			<a href="{{ path('feuille_presence_prof', { 'id': courActuel.id }) }}">Feuille de pr&eacute;sence</a>
+		{% endif %}<br/>
+		{% if courSuivant is not null %}
+			Cours suivant : {{courSuivant.id}}
+		{% endif %}
 	</div>
 	
 	Cours de la semaine (planning)

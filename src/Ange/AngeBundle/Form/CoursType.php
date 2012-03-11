@@ -13,7 +13,8 @@ class CoursType extends AbstractType
             ->add('label')
             ->add('idMatiere')
             ->add('idSalle')
-            ->add('date')
+            ->add('label')
+            ->add('duree')
         ;
     }
 

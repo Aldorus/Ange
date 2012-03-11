@@ -27,12 +27,19 @@ class Cours
     private $label;
     
     /**
-     * @var date $date
+     * @var datetime $date
      *
-     * @ORM\Column(name="date", type="date", nullable=false)
+     * @ORM\Column(name="date", type="datetime", nullable=false)
      */
     private $date;
-
+    
+    /**
+     * @var integer $duree
+     *
+     * @ORM\Column(name="duree", type="integer", nullable=false)
+     */
+    private $duree;
+    
     /**
      * @var Matiere
      *
@@ -128,7 +135,7 @@ class Cours
 	/**
      * Set date
      *
-     * @param date $date
+     * @param datetime $date
      */
     public function setDate($date)
     {
@@ -143,6 +150,26 @@ class Cours
     public function getDate()
     {
         return $this->date;
+    }
+    
+	/**
+     * Set duree
+     *
+     * @param integer $duree
+     */
+    public function setDuree($duree)
+    {
+        $this->duree = $duree;
+    }
+
+    /**
+     * Get duree
+     *
+     * @return duree 
+     */
+    public function getDuree()
+    {
+        return $this->duree;
     }
     
 	//methodes fonctionnelles

@@ -73,3 +73,7 @@ contact:
 utilisateur_envoi_mail:   
     pattern: /utilisateurEnvoiMail
     defaults: { _controller: "AngeAngeBundle:Utilisateur:envoiMail" }
+    
+feuille_presence_prof:
+    pattern: /prof/{id}/feuillePresenceProf
+    defaults: { _controller: "AngeAngeBundle:UtilisateurCours:feuilleDePresence" }
