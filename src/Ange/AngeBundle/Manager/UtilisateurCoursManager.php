@@ -88,20 +88,4 @@ class UtilisateurCoursManager{
 		
 		return $qb->getQuery()->getResult();
 	}
-	
-	function getUtilisateurByCours($idCours){
-		$repository = $this->controller->getDoctrine()->getEntityManager();
-		$qb = $repository->createQueryBuilder()
-		->select('c')
-		->from('AngeAngeBundle:UtilisateurCours','c')
-		->where('c.idCours = :idCours AND c.prof=0')
-		->setParameter('idCours',$idCours);
-		
-		$listeCoursUser = $qb->getQuery()->getResult();
-		$listeUser = array();
-		foreach ($listeCoursUser as $coursUser) {
-			$listeUser[] = $coursUser;
-		}
-		return $listeUser;
-	}
 }

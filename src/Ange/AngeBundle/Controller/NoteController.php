@@ -196,4 +196,12 @@ class NoteController extends Controller
     		'entities'		=> 	$arrayResult,    		
     	));
     }
+    
+	public function noteProfAction(){
+    	$user= $this->container->get('security.context')->getToken()->getUser();
+
+        return $this->render('AngeAngeBundle:Note:prof.html.twig',array(
+        	'coursDefault'		=>	'-1',
+        ));
+    }
 }

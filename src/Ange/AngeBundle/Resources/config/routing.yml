@@ -61,7 +61,11 @@ home_admin:
 note_etu:
     pattern: /etu/note
     defaults: { _controller: "AngeAngeBundle:Note:noteEtudiant" }
-    
+
+note_prof:
+    pattern: /prof/prof
+    defaults: { _controller: "AngeAngeBundle:Note:noteProf" }
+        
 profil:
     pattern: /consulterProfil
     defaults: { _controller: "AngeAngeBundle:Utilisateur:consulter" }
@@ -77,3 +81,7 @@ utilisateur_envoi_mail:
 feuille_presence_prof:
     pattern: /prof/{id}/feuillePresenceProf
     defaults: { _controller: "AngeAngeBundle:UtilisateurCours:feuilleDePresence" }
+    
+remplir_feuille:
+    pattern: /prof/{id}/remplirFeuille
+    defaults: { _controller: "AngeAngeBundle:UtilisateurCours:remplirFeuille" }

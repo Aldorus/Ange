@@ -188,12 +188,43 @@ class UtilisateurCoursController extends Controller
     
     
     public function feuilleDePresenceAction($id){
-    	//on recupere l'id du cours
-    	$coursUserManager = new UtilisateurCoursManager($this);
-        $listeUtilisateur = $coursUserManager->getUtilisateurByCours($id);
+    	$em = $this->getDoctrine()->getEntityManager();
+        $listeUtilisateur = $em->getRepository('AngeAngeBundle:UtilisateurCours')->findByidCours($id);
+        $lstUser = array();	
+        foreach ($listeUtilisateur as $userCours) {
+        	if($userCours->getProf()==0){
+        		$lstUser[] = $userCours;	
+        	}
+        }
     	return $this->render('AngeAngeBundle:UtilisateurCours:feuille_presence.html.twig',array(
-    		'utilisateurs'		=>	$listeUtilisateur,
-    		'coursDefault'	=> -1,
+    		'utilisateurs'		=>	$lstUser,
+    		'coursDefault'		=> 	$id,
+    	));
+    }
+    
+    public function remplirFeuilleAction($id){
+    	$em = $this->getDoctrine()->getEntityManager();
+        $listeUtilisateur = $em->getRepository('AngeAngeBundle:UtilisateurCours')->findByidCours($id);
+        $lstUser = array();	
+        foreach ($listeUtilisateur as $userCours) {
+        	if($userCours->getProf()==0){
+        		//mise a jour
+        		$request = $this->getRequest();
+        		$presence = $request->request->get('presence'+$userCours->getId());
+        		$retard = $request->request->get('retard'+$userCours->getId());
+        		$userCours->setPresent($presence);
+        		$userCours->setRetard($retard);
+        		
+        		$em->persist($userCours);
+           		$em->flush();
+        		
+        		$lstUser[] = $userCours;	
+        	}
+        }
+        //réalisation du rendu
+    	return $this->render('AngeAngeBundle:UtilisateurCours:feuille_presence.html.twig',array(
+    		'utilisateurs'		=>	$lstUser,
+    		'coursDefault'		=> 	$id,
     	));
     }
 }

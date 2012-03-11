@@ -2,8 +2,31 @@
 {% block title %}{{ parent() }} - Feuille de pr&eacute;sence{% endblock %}
 
 {% block body %}
+<div class="breadcrumb">
+	<a href="{{ path('AngeAngeBundle_home') }}">Accueil</a> -> Feuille de pr&eacute;sence
+</div>
+	<br/>
+	<input class="datePicker" onchange=""/>
+	<select disabled="true">
+		<option>Renseigner une date</option>
+	</select>
+	<input id="filtreName" onchange="filtrageName()"/>
+	<button type="button" onchange="filtrageName()">Filtrer</button>
+	<br/><br/>
+
 	Etudiants : 
+	<form action="{{ path('remplir_feuille', { 'id': coursDefault }) }}" method="POST">
 	{% for utilisateur in utilisateurs %}
-		{{ utilisateur.id }}
+		{{ utilisateur.idUtilisateur.nom }} {{ utilisateur.idUtilisateur.prenom }} | Retard : <input name="retard{{utilisateur.id}}" type="checkbox" {% if utilisateur.retard == 1 %}checked="yes"{% endif%}/> | Absent : <input name="present{{utilisateur.id}}" type="checkbox" {% if utilisateur.present is not null and utilisateur.present == 0  %}checked="yes"{% endif%}/><br/>
 	{% endfor %}
+	<input type="submit" value="Valider"/>
+	</form>
+	
+	<script type="text/javascript" language="javascript">
+		$( ".datePicker" ).datepicker();
+		
+		function filtrageName(){
+			alert('blop');
+		}
+	</script>
 {% endblock %}

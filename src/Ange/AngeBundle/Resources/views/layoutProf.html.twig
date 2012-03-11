@@ -3,13 +3,43 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>{% block title %}Ange{% endblock %}</title>
-        <link rel="stylesheet" media="screen" href="style/style.css">
+        
+        <link rel="stylesheet" media="screen" href="{{ asset('style/style.css') }}">
+        <link rel="stylesheet" media="screen" href="{{ asset('style/ui-lightness/jquery-ui-1.8.18.custom.css') }}">
+        
+        <script type="text/javascript" language="javascript" src="{{ asset('js/jquery-1.7.1.min.js') }}"></script>
+        <script type="text/javascript" language="javascript" src="{{ asset('js/jquery-ui-1.8.18.custom.min.js') }}"></script>
+        <script type="text/javascript" language="javascript">
+	        jQuery(function($){
+				$.datepicker.regional['fr'] = {
+					closeText: 'Fermer',
+					prevText: '&#x3c;Préc',
+					nextText: 'Suiv&#x3e;',
+					currentText: 'Courant',
+					monthNames: ['Janvier','Février','Mars','Avril','Mai','Juin',
+					'Juillet','Août','Septembre','Octobre','Novembre','Décembre'],
+					monthNamesShort: ['Jan','Fév','Mar','Avr','Mai','Jun',
+					'Jul','Aoû','Sep','Oct','Nov','Déc'],
+					dayNames: ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'],
+					dayNamesShort: ['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'],
+					dayNamesMin: ['Di','Lu','Ma','Me','Je','Ve','Sa'],
+					weekHeader: 'Sm',
+					dateFormat: 'dd/mm/yy',
+					firstDay: 1,
+					isRTL: false,
+					showMonthAfterYear: false,
+					yearSuffix: ''};
+				$.datepicker.setDefaults($.datepicker.regional['fr']);
+			});
+        </script>
     </head>
     <body>
 		<a href="{{ path('profil') }}">Mon profil</a><a href="{{ path('contact') }}">Contact</a> <a href="{{ path('fos_user_security_logout')}}">D&eacute;connexion</a>
 		<div class="menu">
 			<a href="{{ path('AngeAngeBundle_home') }}">Accueil</a>
 			<a href="{{ path('feuille_presence_prof', { 'id': coursDefault }) }}">Feuille de pr&eacute;sence</a>
+			<a href="{{ path('note_prof') }}">Notes</a>
+			
 		</div>
 		
         {% block body %}
