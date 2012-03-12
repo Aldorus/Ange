@@ -184,4 +184,8 @@ class DevoirController extends Controller
             ->getForm()
         ;
     }
+    
+    public function devoirEtudiantAction(){
+    	return $this->render('AngeAngeBundle:Devoir:etudiant.html.twig');
+    }
 }

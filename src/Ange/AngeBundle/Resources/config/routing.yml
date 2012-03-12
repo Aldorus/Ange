@@ -63,8 +63,12 @@ note_etu:
     defaults: { _controller: "AngeAngeBundle:Note:noteEtudiant" }
 
 note_prof:
-    pattern: /prof/prof
+    pattern: /prof/note
     defaults: { _controller: "AngeAngeBundle:Note:noteProf" }
+    
+note_admin:
+    pattern: /admin/note
+    defaults: { _controller: "AngeAngeBundle:Note:noteAdmin" }
         
 profil:
     pattern: /consulterProfil
@@ -85,3 +89,19 @@ feuille_presence_prof:
 remplir_feuille:
     pattern: /prof/{id}/remplirFeuille
     defaults: { _controller: "AngeAngeBundle:UtilisateurCours:remplirFeuille" }
+    
+devoir_etu:
+    pattern: /etu/devoir
+    defaults: { _controller: "AngeAngeBundle:Devoir:devoirEtudiant" }
+    
+absence_etu:
+    pattern: /etu/absence
+    defaults: { _controller: "AngeAngeBundle:UtilisateurCours:absenceEtudiant" }
+    
+absence_prof:
+    pattern: /prof/absence
+    defaults: { _controller: "AngeAngeBundle:UtilisateurCours:absenceProf" }
+    
+absence_admin:
+    pattern: /admin/absence
+    defaults: { _controller: "AngeAngeBundle:UtilisateurCours:absenceAdmin" }
