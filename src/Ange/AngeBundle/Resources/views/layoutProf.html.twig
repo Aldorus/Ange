@@ -13,13 +13,13 @@
 	        jQuery(function($){
 				$.datepicker.regional['fr'] = {
 					closeText: 'Fermer',
-					prevText: '&#x3c;Préc',
+					prevText: '&#x3c;Pr&eaucte;c',
 					nextText: 'Suiv&#x3e;',
 					currentText: 'Courant',
-					monthNames: ['Janvier','Février','Mars','Avril','Mai','Juin',
-					'Juillet','Août','Septembre','Octobre','Novembre','Décembre'],
-					monthNamesShort: ['Jan','Fév','Mar','Avr','Mai','Jun',
-					'Jul','Aoû','Sep','Oct','Nov','Déc'],
+					monthNames: ['Janvier','F&eacute;vrier','Mars','Avril','Mai','Juin',
+					'Juillet','Aout','Septembre','Octobre','Novembre','D&eacute;cembre'],
+					monthNamesShort: ['Jan','F&eacute;v','Mar','Avr','Mai','Jun',
+					'Jul','Aou','Sep','Oct','Nov','D&eacute;c'],
 					dayNames: ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'],
 					dayNamesShort: ['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'],
 					dayNamesMin: ['Di','Lu','Ma','Me','Je','Ve','Sa'],
@@ -38,6 +38,7 @@
 		<div class="menu">
 			<a href="{{ path('AngeAngeBundle_home') }}">Accueil</a>
 			<a href="{{ path('feuille_presence_prof', { 'id': coursDefault }) }}">Feuille de pr&eacute;sence</a>
+			<a href="{{ path('absence_prof') }}">Absences</a>
 			<a href="{{ path('note_prof') }}">Notes</a>
 			
 		</div>
