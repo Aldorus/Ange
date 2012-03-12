@@ -1,0 +1,13 @@
+{% extends "AngeAngeBundle::layoutAdmin.html.twig" %}
+{% block body %}
+<h1>Contact</h1>
+	<form action="{{ path('utilisateur_envoi_mail') }}" method="POST">
+		Choisissez une personne &agrave; contacter :
+		<select name="profEmail">
+		{% for prof in profs %}
+			<option value="{{prof.email}}">{{prof.username}}</option>
+		{% endfor %}
+		</select>
+		<input type="submit" value="Envoyer un mail"/>
+	</form>
+{% endblock %}

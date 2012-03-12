@@ -193,22 +193,51 @@ class UtilisateurController extends Controller
     }
     
     public function contactAction(){
-    	//rÃ©cuperation des profs
+    	$user= $this->container->get('security.context')->getToken()->getUser();
+    	
     	$em = $this->getDoctrine()->getEntityManager();
-
-        //$entity = $em->getRepository('AngeAngeBundle:Utilisateur')->findByroles('ROLE_PROF');
-        $qb = $em->createQueryBuilder()
+	    $qb = $em->createQueryBuilder()
         ->select('u')
         ->from('AngeAngeBundle:Utilisateur','u')
         ->where("u.roles LIKE '%ROLE_PROF%' OR u.roles LIKE '%ROLE_ADMIN%'");
-    	return $this->render('AngeAngeBundle:Utilisateur:contact.html.twig',array(
-    		'profs'		=>	$qb->getQuery()->getResult(),
-    	));
+
+        $user= $this->container->get('security.context')->getToken()->getUser();
+    	//redirection suivant les roles
+    	if($user->hasRole('ROLE_ADMIN')){
+    		return $this->render('AngeAngeBundle:Utilisateur:contactAdmin.html.twig',array(
+    			'profs'				=>	$qb->getQuery()->getResult(),
+    		));
+    	}elseif($user->hasRole('ROLE_PROF')){
+    		return $this->render('AngeAngeBundle:Utilisateur:contactProf.html.twig',array(
+    			'coursDefault'		=> -1,
+    			'profs'				=>	$qb->getQuery()->getResult(),
+    		));
+    	}elseif($user->hasRole('ROLE_ETU')){
+    		//récuperation des profs
+	    	$em = $this->getDoctrine()->getEntityManager();
+	
+	        //$entity = $em->getRepository('AngeAngeBundle:Utilisateur')->findByroles('ROLE_PROF');
+	        return $this->render('AngeAngeBundle:Utilisateur:contactEtu.html.twig',array(
+	    		'profs'		=>	$qb->getQuery()->getResult(),
+	        	'user'		=>	$user,
+	    	));
+    	}else{
+    		//fucking cheat 
+    		//TODO
+    	}
     }
     
     public function envoiMailAction(){
     	//envoi d'un mail a la personne en contact
     	//voir portfolio
     	
+    }
+    
+    public function eleveAction(){
+    	return $this->render('AngeAngeBundle:Utilisateur:eleve.html.twig');
+    }
+    
+    public function utilisateurAction(){
+    	return $this->render('AngeAngeBundle:Utilisateur:utilisateur.html.twig');
     }
 }

@@ -105,3 +105,11 @@ absence_prof:
 absence_admin:
     pattern: /admin/absence
     defaults: { _controller: "AngeAngeBundle:UtilisateurCours:absenceAdmin" }
+    
+eleve_admin:
+    pattern: /admin/eleve
+    defaults: { _controller: "AngeAngeBundle:Utilisateur:eleve" }
+
+utilisateur_admin:
+    pattern: /admin/utilisateur
+    defaults: { _controller: "AngeAngeBundle:Utilisateur:utilisateur" }

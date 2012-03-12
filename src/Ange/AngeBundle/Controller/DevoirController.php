@@ -186,6 +186,9 @@ class DevoirController extends Controller
     }
     
     public function devoirEtudiantAction(){
-    	return $this->render('AngeAngeBundle:Devoir:etudiant.html.twig');
+    	$user= $this->container->get('security.context')->getToken()->getUser();
+    	return $this->render('AngeAngeBundle:Devoir:etudiant.html.twig',array(
+    		'user'			=>	$user,
+    	));
     }
 }

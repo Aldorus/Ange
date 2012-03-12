@@ -11,10 +11,10 @@
 			<div id="logo"><img src="{{ asset('images/logo.png') }}" /></div>
 			<ul id="menu">
 				<li><a href="{{ path('AngeAngeBundle_home') }}">ACCUEIL</a></li>
-				<li><a href="#">ABSENCES</a></li>
-				<li><a href="#">NOTES</a></li>
-				<li><a href="#">ELEVES</a></li>
-				<li><a href="#">UTILISATEURS</a></li>
+				<li><a href="{{ path('absence_admin') }}">ABSENCES</a></li>
+				<li><a href="{{ path('note_admin') }}">NOTES</a></li>
+				<li><a href="{{ path('eleve_admin') }}">ELEVES</a></li>
+				<li><a href="{{ path('utilisateur_admin') }}">UTILISATEURS</a></li>
 			</ul>
 			<div id="zoneConnexion">
 				<p></p>
@@ -41,8 +41,8 @@
 		</div>
 
 		<div id="footer">
-			<p style="float:right;"> <b>Université Cergy Pontoise</b> 33 Boulevard du Port  95011 Cergy Pontoise</p>
-			<p><a href="{{ path('contact') }}">Contact</a> | <a href="#">Mentions Légales</a></p>
+			<p style="float:right;"> <b>Universit&eacute; Cergy Pontoise</b> 33 Boulevard du Port  95011 Cergy Pontoise</p>
+			<p><a href="{{ path('contact') }}">Contact</a> | <a href="#">Mentions L&eacute;gales</a></p>
 		</div>
 	</div>
 

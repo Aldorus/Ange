@@ -227,4 +227,21 @@ class UtilisateurCoursController extends Controller
     		'coursDefault'		=> 	$id,
     	));
     }
+    
+	public function absenceEtudiantAction(){
+		$user= $this->container->get('security.context')->getToken()->getUser();
+    	return $this->render('AngeAngeBundle:UtilisateurCours:absence_etudiant.html.twig',array(
+    		'user'			=>	$user,
+    	));
+    }
+    
+	public function absenceProfAction(){
+    	return $this->render('AngeAngeBundle:UtilisateurCours:absence_prof.html.twig',array(
+    		'coursDefault'		=> 	-1,
+    	));
+    }
+    
+	public function absenceAdminAction(){
+    	return $this->render('AngeAngeBundle:UtilisateurCours:absence_admin.html.twig');
+    }
 }

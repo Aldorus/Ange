@@ -193,7 +193,8 @@ class NoteController extends Controller
     	$noteManager = new NoteManager($this);
         $arrayResult = $noteManager->getNoteAndMoyenne($user);
         return $this->render('AngeAngeBundle:Note:etudiant.html.twig',array(
-    		'entities'		=> 	$arrayResult,    		
+    		'entities'		=> 	$arrayResult,
+        	'user'			=>	$user,    		
     	));
     }
     
@@ -202,6 +203,14 @@ class NoteController extends Controller
 
         return $this->render('AngeAngeBundle:Note:prof.html.twig',array(
         	'coursDefault'		=>	'-1',
+        ));
+    }
+    
+	public function noteAdminAction(){
+    	$user= $this->container->get('security.context')->getToken()->getUser();
+
+        return $this->render('AngeAngeBundle:Note:admin.html.twig',array(
+        	
         ));
     }
 }
