@@ -1,0 +1,116 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+body{
+
+}
+#container{
+	margin:  auto;
+	width:1024px;
+}
+/*
+	HEADER
+
+*/
+#header{
+	min-height:163px;
+}
+#logo{
+	float:left;
+	margin-top:30px;
+}
+
+/* MENU */
+
+#menu{
+	padding-left:0px;
+	font-size:16px;
+    line-height : 133px; /* on définit une hauteur pour chaque élément */
+}
+
+#menu li{
+	background :  url('../images/element-menu.png') top no-repeat;
+	width:130px;
+	height:163px;
+	float:left;
+	list-style:none;
+	text-align:center;
+	cursor:pointer;
+}
+#menu li:hover{
+	background :  url('../images/element-menu-hover.png') top no-repeat;
+}
+#menu li a{
+	display:block;
+	width:130px;
+	height:163px;
+	color:#fff;
+	font-weight: bold;
+	text-decoration:none;
+}
+#menu li a:hover, #menu li a:focus, #menu li a:active{
+	background :  url('../images/element-menu-hover.png') top no-repeat;
+	color:#000;
+}
+/* ZONE DE DROITE */
+
+#zoneConnexion{
+	text-align:center;
+	padding:20px;
+	float:right;
+}
+#boutonProfil a, #boutonDeconnexion a{
+	display:block;
+	font-weight:bold;
+	color:#fff;
+	background:#ce6b3a;
+	padding:8px;
+	margin:5px;
+	border-radius:15px;
+	cursor:pointer;
+	text-decoration:none;
+	width:140px;
+}
+#boutonProfil a:hover,#boutonProfil a:active,#boutonProfil a:focus, #boutonDeconnexion a:hover, #boutonDeconnexion a:active, #boutonDeconnexion a:focus{
+	color:#000;
+	background:#fde9be;
+}
+/*
+	CONTENT
+
+*/
+#content{
+	min-height:553px;
+}
+#colonne-droite{
+	float:right;
+	width:199px;
+	height:100%;
+}
+#header-colonne-droite{
+	background :  url('../images/header-colonne-droite.png') top left no-repeat;
+	min-height:32px;
+}
+#content-colonne-droite{
+	background :  url('../images/fond-colonne-droite.png') top left repeat-y;
+	min-height:500px;
+}
+#colonne-gauche{
+	margin-right:199px;
+	height:100%;
+}
+/*
+	FOOTER
+
+*/
+#footer{
+	color:#fff;
+	clear:both;
+	min-height:35px;
+	background :  url('../images/footer.png') top left no-repeat;
+}
+#footer a{
+	color:#fff;
+	text-decoration:none;
+}

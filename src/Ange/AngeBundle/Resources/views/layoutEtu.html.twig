@@ -3,17 +3,49 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>{% block title %}Ange{% endblock %}</title>
-        <link rel="stylesheet" media="screen" href="style/style.css">
+        <link rel="stylesheet" media="screen" href="{{ asset('style/style.css') }}">
     </head>
-    <body>
-    	<a href="{{ path('profil') }}">Mon profil</a><a href="{{ path('contact') }}">Contact</a> <a href="{{ path('fos_user_security_logout')}}">D&eacute;connexion</a>
-    	<div class="menu">
-    		<a href="{{ path('AngeAngeBundle_home') }}">Accueil</a>
-    		<a href="{{ path('note_etu') }}">Notes</a>
-    	</div>
-    	<div class="content">
-    		{% block body %}
-        	{% endblock %}
-        </div>
-    </body>
+	<body>
+	<div id="container">
+		<div id="header">
+			<div id="logo"><img src="{{ asset('images/logo.png') }}" /></div>
+			<ul id="menu">
+				<li><a href="{{ path('AngeAngeBundle_home') }}">ACCUEIL</a></li>
+				<li><a href="{{ path('note_etu') }}">NOTES</a></li>
+				<li><a href="#">ABSENCES</a></li>
+				<li><a href="#">DEVOIRS</a></li>
+				<li><a href="{{ path('contact') }}">CONTACT</a></li>
+			</ul>
+			<div id="zoneConnexion">
+				<p>{{ user.nom }} {{ user.prenom }}</p>
+				<div id="boutonProfil"><a href="{{ path('profil') }}">Profil</a></div>
+				<div id="boutonDeconnexion"><a href="#">Déconnexion</a></div>
+			</div>
+		</div>
+
+		<div id="menu">
+		</div>
+		<div id="content" >
+			<div id="colonne-droite">
+				<div id="header-colonne-droite">
+				</div>
+				<div id="content-colonne-droite">
+					{% block right %}
+					{% endblock %}
+				</div>
+			</div>
+			<div id="colonne-gauche">
+				{% block body %}
+				{% endblock %}
+			</div>
+		</div>
+
+		<div id="footer">
+			<p style="float:right;"> <b>Université Cergy Pontoise</b> 33 Boulevard du Port  95011 Cergy Pontoise</p>
+			<p><a href="{{ path('contact') }}">Contact</a> | <a href="#">Mentions Légales</a></p>
+		</div>
+	</div>
+
+</body>
+
 </html>
