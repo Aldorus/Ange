@@ -3,12 +3,49 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>{% block title %}Ange{% endblock %}</title>
-        <link rel="stylesheet" media="screen" href="style/style.css">
+        <link rel="stylesheet" media="screen" href="{{ asset('style/style.css') }}">
     </head>
-    <body>
+	<body>
+	<div id="container">
+		<div id="header">
+			<div id="logo"><img src="{{ asset('images/logo.png') }}" /></div>
+			<ul id="menu">
+				<li><a href="{{ path('AngeAngeBundle_home') }}">ACCUEIL</a></li>
+				<li><a href="#">ABSENCES</a></li>
+				<li><a href="#">NOTES</a></li>
+				<li><a href="#">ELEVES</a></li>
+				<li><a href="#">UTILISATEURS</a></li>
+			</ul>
+			<div id="zoneConnexion">
+				<p></p>
+				<div id="boutonProfil"><a href="{{ path('profil') }}">Profil</a></div>
+				<div id="boutonDeconnexion"><a href="{{ path('fos_user_security_logout')}}">Déconnexion</a></div>
+			</div>
+		</div>
 
-        {% block body %}
-        {% endblock %}
+		<div id="menu">
+		</div>
+		<div id="content" >
+			<div id="colonne-droite">
+				<div id="header-colonne-droite">
+				</div>
+				<div id="content-colonne-droite">
+					{% block right %}
+					{% endblock %}
+				</div>
+			</div>
+			<div id="colonne-gauche">
+				{% block body %}
+				{% endblock %}
+			</div>
+		</div>
 
-    </body>
+		<div id="footer">
+			<p style="float:right;"> <b>Université Cergy Pontoise</b> 33 Boulevard du Port  95011 Cergy Pontoise</p>
+			<p><a href="{{ path('contact') }}">Contact</a> | <a href="#">Mentions Légales</a></p>
+		</div>
+	</div>
+
+</body>
+
 </html>

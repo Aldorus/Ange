@@ -19,7 +19,7 @@
 			<div id="zoneConnexion">
 				<p>{{ user.nom }} {{ user.prenom }}</p>
 				<div id="boutonProfil"><a href="{{ path('profil') }}">Profil</a></div>
-				<div id="boutonDeconnexion"><a href="#">Déconnexion</a></div>
+				<div id="boutonDeconnexion"><a href="{{ path('fos_user_security_logout')}}">Déconnexion</a></div>
 			</div>
 		</div>
 
