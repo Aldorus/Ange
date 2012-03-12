@@ -52,7 +52,7 @@ class HomeController extends Controller
             'entities' 		=> $entities,
         	'nbAbsence'		=> $nbAbsence,
         	'absencesProf'	=> $absencesProf,
-        
+			'user'			=> $user,
         ));
     }
     
